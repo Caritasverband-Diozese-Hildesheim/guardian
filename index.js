@@ -123,6 +123,6 @@ wss.on('connection', function connection(ws, request) {
 
 });
 
-server.listen(4000, "127.0.0.1", () => {
+server.listen(4000, "0.0.0.0", () => {
   console.log("Server started");
 });
