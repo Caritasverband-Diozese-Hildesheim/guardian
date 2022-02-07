@@ -1,23 +1,6 @@
-function connectForMessages(URL){
-    var ws = new WebSocket(URL);
-				
-    ws.onopen = function() {
-        ws.onmessage = function (evt) { 
-            if (evt.data === 'Connection to guardian etablished!')
-            {
-                console.log(evt.data);
-            }
-            else 
-            {
-                alert(JSON.parse(evt.data).msg);
-            }
-         };
-    }
-}
 function checkForServer(hostURL) {
     fetch(hostURL + '/ping')
         .then(response => {
-            console.log(response.status)
             if (response.status === 200) {
                 return response.json();
             }
@@ -42,7 +25,6 @@ function checkForServer(hostURL) {
 }
 
 function startScanning(hostURL) {
-    connectForMessages('ws://localhost:4000/')
     checkForServer(hostURL);
     setInterval(() => {
         checkForServer(hostURL);

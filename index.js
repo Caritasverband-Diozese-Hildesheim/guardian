@@ -63,7 +63,6 @@ app.post("/sendMessage", (req, res) => {
     const message = new msgObject(req.body.group, req.body.username, req.body.adminMsg, req.body.msg);
 
     for (const [key, value] of connectionMap.entries()) {
-      console.log(message.username);
       if (message.group === "all" && (message.msg !== undefined || message.msg !== "")) {
         value.send(JSON.stringify({ adminMsg: message.adminMsg, msg: message.msg }));
         counter++;
