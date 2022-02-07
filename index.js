@@ -17,7 +17,7 @@ const kcConfig = {
   "auth-server-url": process.env.GW_AUTHURL,
   "realm": process.env.GW_REALM,
   "secret": process.env.GW_CLIENTSECRET,
-  "public-client": false,
+  "public-client": false
 };
 const APIKEY = process.env.GW_APIKEY;
 
