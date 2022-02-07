@@ -4,10 +4,11 @@
     <title><%= title %></title>
     <script src="js/connectWS.js"></script>
   </head>
-  <body>
+  <body <%- 'onload="startScanning('+ hostURL +')"' %> >
     <div class="content">
       <h1><%= title %></h1>
         <p>Welcome to <%= title %></p>        
     </div>
+    <div id="message"></div>
   </body>
 </html>
